@@ -1,0 +1,37 @@
+{
+  "npmScope": "practica-final-curso",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "country-finder": {
+      "tags": []
+    },
+    "country-finder-e2e": {
+      "tags": [],
+      "implicitDependencies": ["country-finder"]
+    },
+    "world-bank-consumer": {
+      "tags": []
+    }
+  }
+}

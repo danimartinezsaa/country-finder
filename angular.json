@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "projects": {
+    "country-finder": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/country-finder",
+      "sourceRoot": "apps/country-finder/src",
+      "prefix": "c-finder",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/country-finder/browser",
+            "index": "apps/country-finder/src/index.html",
+            "main": "apps/country-finder/src/main.ts",
+            "polyfills": "apps/country-finder/src/polyfills.ts",
+            "tsConfig": "apps/country-finder/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/country-finder/src/favicon.ico",
+              "apps/country-finder/src/assets",
+              "apps/country-finder/src/manifest.webmanifest"
+            ],
+            "styles": ["apps/country-finder/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/country-finder/src/environments/environment.ts",
+                  "with": "apps/country-finder/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/country-finder/ngsw-config.json"
+            },
+            "production-es": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/country-finder/src/environments/environment.ts",
+                  "with": "apps/country-finder/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputPath": "dist/country-finder/es",
+              "i18nFile": "apps/country-finder/src/locale/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es",
+              "baseHref": "es",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/country-finder/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "country-finder:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "country-finder:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "country-finder:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/country-finder/tsconfig.app.json",
+              "apps/country-finder/tsconfig.spec.json",
+              "apps/country-finder/tsconfig.editor.json",
+              "apps/country-finder/tsconfig.server.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/country-finder/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/country-finder/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/country-finder/server",
+            "main": "apps/country-finder/server.ts",
+            "tsConfig": "apps/country-finder/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/country-finder/src/environments/environment.ts",
+                  "with": "apps/country-finder/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "country-finder:build",
+            "serverTarget": "country-finder:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "country-finder:build:production",
+              "serverTarget": "country-finder:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "country-finder:build:production",
+            "serverTarget": "country-finder:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
+        }
+      }
+    },
+    "country-finder-e2e": {
+      "root": "apps/country-finder-e2e",
+      "sourceRoot": "apps/country-finder-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/country-finder-e2e/cypress.json",
+            "tsConfig": "apps/country-finder-e2e/tsconfig.e2e.json",
+            "devServerTarget": "country-finder:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "country-finder:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/country-finder-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/country-finder-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "world-bank-consumer": {
+      "root": "libs/world-bank-consumer",
+      "sourceRoot": "libs/world-bank-consumer/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/world-bank-consumer/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/world-bank-consumer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "country-finder"
+}

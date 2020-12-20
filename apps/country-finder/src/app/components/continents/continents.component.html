@@ -1,0 +1,7 @@
+<h1 i18n>¡Welcome to Country Finder! Select the region</h1>
+<div *ngIf="continents$ | async as continents else loading">
+    <c-finder-list data-test="continents" [elements]="continents" (selected)="selectContinent($event)"></c-finder-list>
+</div>
+<ng-template #loading>
+    <c-finder-loading></c-finder-loading>
+</ng-template>

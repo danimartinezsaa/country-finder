@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4d1d4f8c3875d65fd8c775d6ee617c1b2f41f6df" datatype="html">
+        <source>Return</source>
+        <target>Volver</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/shared/back-button.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cc636d7db99a80f962d9926c3253f9c4c2647d2b" datatype="html">
+        <source>Countries:</source>
+        <target>Países</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/region/region.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15be1f42a2e8c44e9516bcac28dd48a193d6bbc8" datatype="html">
+        <source>You&apos;re in <x id="INTERPOLATION" equiv-text="{{region.name}}"/> region</source>
+        <target>Estás en la región: <x id="INTERPOLATION" equiv-text="{{region.name}}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/region/region-info.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ef732c97841bd96531f11a87c8f1ca6bfe9ba954" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{country.name}}"/> Details</source>
+        <target>Detalles de: <x id="INTERPOLATION" equiv-text="{{country.name}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country/country-info.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7185346120c2d7384c9060497bab0b20e4c0c1f" datatype="html">
+        <source>Capital:</source>
+        <target>Capital:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country/country-info.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e0ad02a8a2295d1f317fcdbe9057c5e460c8dd0" datatype="html">
+        <source>Latitude:</source>
+        <target>Latitud:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country/country-info.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="284b2009235fd44e3da87a60adb793608ee5d02c" datatype="html">
+        <source>Longitude:</source>
+        <target>Longitud:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country/country-info.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9ad82472e4a055db8c78361a9b9dc6861d87bdb1" datatype="html">
+        <source>Continent:</source>
+        <target>Continente:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country/country-info.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e01eed2bd88092d4220c648baccc8b948da1c132" datatype="html">
+        <source>¡Welcome to Country Finder! Select the region</source>
+        <target>¡Bienvenido al Buscador de países! Selecciona la región</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/continents/continents.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

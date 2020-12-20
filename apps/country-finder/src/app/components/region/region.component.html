@@ -1,0 +1,9 @@
+<c-finder-back-button (pressed)="goBack()"></c-finder-back-button>
+<div *ngIf="countries$ | async as countries else loading">
+    <c-finder-region-info *ngIf="region$ | async as region" [region]="region"></c-finder-region-info>
+    <h2 i18n>Countries:</h2>
+    <c-finder-list [elements]="countries" (selected)="selectCountry($event)"></c-finder-list>
+</div>
+<ng-template #loading>
+    <c-finder-loading></c-finder-loading>
+</ng-template>

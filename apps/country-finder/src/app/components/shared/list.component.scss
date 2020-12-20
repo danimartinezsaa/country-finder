@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  
+    .item {
+      width: 250px;
+      padding: 22px 0;
+      margin: 10px 10px;
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 45px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      text-align: center;
+    }
+  }

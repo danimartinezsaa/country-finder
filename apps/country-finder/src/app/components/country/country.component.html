@@ -1,0 +1,7 @@
+<div *ngIf="country$ | async as country else loading">
+    <c-finder-country-info [country]="country"></c-finder-country-info>
+</div>
+<c-finder-back-button (pressed)="goBack()"></c-finder-back-button>
+<ng-template #loading>
+    <c-finder-loading></c-finder-loading>
+</ng-template>
